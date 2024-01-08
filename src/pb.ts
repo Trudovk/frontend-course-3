@@ -2,6 +2,7 @@ import PocketBase from "pocketbase";
 
 export const pb = new PocketBase("http://127.0.0.1:8090");
 
+//тут мы создаем коллекцию серверов через код (тк через админку дольше)
 const data = [
   {
     processor: "Intel Xeon E5-2630 v4",
