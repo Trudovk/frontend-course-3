@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+pb_data/logs.db
+pb_data/logs.db-shm
+pb_data/logs.db-wal
