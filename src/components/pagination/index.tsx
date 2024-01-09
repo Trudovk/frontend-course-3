@@ -1,10 +1,11 @@
+import styled from "styled-components";
 type Props = {
   currentPage: number;
   totalPages: number;
   onSwitch: (page: number) => void;
 };
 
-const Pagination: React.FC<Props> = (props) => {
+export default function Pagination(props: Props) {
   return (
     <div>
       {props.currentPage > 2 && (
@@ -34,6 +35,24 @@ const Pagination: React.FC<Props> = (props) => {
       )}
     </div>
   );
-};
+}
 
-export default Pagination;
+export const StyledPagination = styled(Pagination)`
+  & {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    button {
+      margin: 0 5px;
+      padding: 5px 10px;
+      border: 1px solid #000;
+      border-radius: 5px;
+      background-color: #fff;
+      cursor: pointer;
+      &:hover {
+        background-color: #000;
+        color: #fff;
+      }
+    }
+  }
+`;

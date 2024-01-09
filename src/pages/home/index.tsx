@@ -1,8 +1,16 @@
 import { useEffect, useState } from "react";
 import { Table } from "antd";
-import "../../App.css";
 import { ColumnsType, PaginationType, ServerType } from "../../types";
-import Pagination from "../../components/pagination";
+import styled from "styled-components";
+import { StyledPagination } from "../../components/pagination";
+
+const StyledMain = styled.main`
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+`;
 
 export default function Home() {
   const [data, setData] = useState<ServerType[] | null>(null);
@@ -58,15 +66,15 @@ export default function Home() {
   ];
 
   return (
-    <main className="App">
+    <StyledMain>
       <h1>Аренда серверов</h1>
       <h2>Готовые решения</h2>
       {data && <Table dataSource={data} columns={columns} pagination={false} />}
-      <Pagination
+      <StyledPagination
         currentPage={pagination.current}
         totalPages={pagination.totalPages}
         onSwitch={(page) => setPagination({ ...pagination, current: page })}
       />
-    </main>
+    </StyledMain>
   );
 }
