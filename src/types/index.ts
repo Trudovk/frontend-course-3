@@ -17,3 +17,8 @@ export type ColumnsType = {
   dataIndex: string;
   key: string;
 };
+
+export type FormType = {
+  text: string;
+  mail: string;
+};
