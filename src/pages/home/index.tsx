@@ -12,6 +12,14 @@ const StyledMain = styled.main`
   gap: 8px;
 `;
 
+interface IServer {
+  id: string;
+  processor: string;
+  disk: string;
+  ram: string;
+  rentPerMonth: number;
+}
+
 export default function Home() {
   const [data, setData] = useState<ServerType[] | null>(null);
   const [pagination, setPagination] = useState<PaginationType>({
@@ -21,7 +29,7 @@ export default function Home() {
   });
   useEffect(() => {
     fetch(
-      `http://127.0.0.1:8090/api/collections/servers/records?perPage=${pagination.pageSize}&page=${pagination.current}`
+      `https://pocketbase-front-323.fjx.su/api/collections/servers/records?perPage=${pagination.pageSize}&page=${pagination.current}`
     )
       .then((response) => response.json())
       .then((data) => {
@@ -31,7 +39,7 @@ export default function Home() {
           totalPages: data.totalPages,
         };
         setPagination(pagination);
-        const servers = data.items.map((item: any) => ({
+        const servers = data.items.map((item: IServer) => ({
           key: item.id,
           processor: item.processor,
           disk: item.disk,
@@ -40,7 +48,8 @@ export default function Home() {
         }));
         setData(servers);
       });
-  }, [pagination.current]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pagination.current, pagination.pageSize]);
 
   const columns: ColumnsType[] = [
     {

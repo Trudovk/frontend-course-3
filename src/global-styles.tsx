@@ -1,5 +1,4 @@
 import { createGlobalStyle } from "styled-components";
-import { Button } from "antd";
 
 const GlobalStyles = createGlobalStyle`
     :root {
