@@ -52,6 +52,7 @@ export default function Nav() {
       <StyledLink to={ROUTES.ABOUTUS}>О нас</StyledLink>
       {isAuth && <StyledLink to={ROUTES.ACCOUNT}>Аккаунт</StyledLink>}
       <StyledLink to={ROUTES.PDF}>PDF</StyledLink>
+      <StyledLink to={ROUTES.DYNPAHINATION}>Д. Пагинация</StyledLink>
       <ButtonStyle
         icon={
           currentTheme === "light" ? (
