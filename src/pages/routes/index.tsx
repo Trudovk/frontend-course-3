@@ -28,9 +28,7 @@ const MainRouter = () => {
     { path: "*", element: <Navigate to={"/"} replace /> },
   ];
 
-  const authPath: RouteObject[] = [
-    { path: ROUTES.ACCOUNT, element: <Account /> },
-  ];
+  const authPath: RouteObject[] = [{ path: ROUTES.ACCOUNT, element: <Account /> }];
 
   const resultPaths: RouteObject[] = basedPath;
 

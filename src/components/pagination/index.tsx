@@ -1,9 +1,9 @@
 import styled from "styled-components";
-type Props = {
+interface Props {
   currentPage: number;
   totalPages: number;
   onSwitch: (page: number) => void;
-};
+}
 
 export default function Pagination(props: Props) {
   return (
@@ -15,22 +15,16 @@ export default function Pagination(props: Props) {
         </>
       )}
       {props.currentPage !== 1 && (
-        <button onClick={() => props.onSwitch(props.currentPage - 1)}>
-          {props.currentPage - 1}
-        </button>
+        <button onClick={() => props.onSwitch(props.currentPage - 1)}>{props.currentPage - 1}</button>
       )}
       <button>{props.currentPage}</button>
       {props.currentPage <= props.totalPages - 1 && (
-        <button onClick={() => props.onSwitch(props.currentPage + 1)}>
-          {props.currentPage + 1}
-        </button>
+        <button onClick={() => props.onSwitch(props.currentPage + 1)}>{props.currentPage + 1}</button>
       )}
       {props.currentPage < props.totalPages - 1 && (
         <>
           <button>...</button>
-          <button onClick={() => props.onSwitch(props.totalPages)}>
-            {props.totalPages}
-          </button>
+          <button onClick={() => props.onSwitch(props.totalPages)}>{props.totalPages}</button>
         </>
       )}
     </div>

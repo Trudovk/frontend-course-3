@@ -1,16 +1,6 @@
-import { useState } from "react";
+import { useState, FC } from "react";
 import { useForm } from "react-hook-form";
-import {
-  Page,
-  Text,
-  View,
-  Document,
-  StyleSheet,
-  PDFDownloadLink,
-  Image,
-  Font,
-} from "@react-pdf/renderer";
-import { FC } from "react";
+import { Page, Text, View, Document, StyleSheet, PDFDownloadLink, Image, Font } from "@react-pdf/renderer";
 
 Font.register({
   family: "Roboto",
@@ -45,9 +35,7 @@ const MyDocument: FC<IMyForm> = ({ name, picture }) => {
           <Text style={styles.myText}>{name}</Text>
         </View>
 
-        <View style={styles.section}>
-          {picture && <Image source={picture[0]} />}
-        </View>
+        <View style={styles.section}>{picture && <Image source={picture[0]} />}</View>
       </Page>
     </Document>
   );
@@ -94,13 +82,8 @@ const Pdf = () => {
       </form>
 
       {!!task?.name && (
-        <PDFDownloadLink
-          document={<MyDocument name={task.name} picture={task.picture} />}
-          fileName="somename.pdf"
-        >
-          {({ blob, url, loading, error }) =>
-            loading ? "Loading document..." : error?.message ?? "Download now!"
-          }
+        <PDFDownloadLink document={<MyDocument name={task.name} picture={task.picture} />} fileName="somename.pdf">
+          {({ blob, url, loading, error }) => (loading ? "Loading document..." : error?.message ?? "Download now!")}
         </PDFDownloadLink>
       )}
     </>

@@ -19,15 +19,15 @@ const ButtonStyle = styled(Button)`
   }
 `;
 
-type StyledNavProps = {
+interface StyledNavProps {
   width?: string;
-};
+}
 
 const StyledNav = styled.nav<StyledNavProps>`
   display: flex;
   justify-content: space-between;
   gap: 8px;
-  width: ${({ width }) => width || "auto"};
+  width: ${({ width }) => width ?? "auto"};
 `;
 
 const StyledLink = styled(Link)`
@@ -95,7 +95,7 @@ export default function Nav() {
         }}
       ></ButtonStyle>
       <Button type="primary" onClick={() => setIsAuth(!isAuth)}>
-        {isAuth == true ? "Выход" : "Вход"}
+        {isAuth === true ? "Выход" : "Вход"}
       </Button>
     </StyledNav>
   );

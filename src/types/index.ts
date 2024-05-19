@@ -1,29 +1,29 @@
-export type ServerType = {
+export interface ServerType {
   key: string;
   processor: string;
   disk: string;
   ram: string;
   rentPerMonth: string;
-};
+}
 
-export type PaginationType = {
+export interface PaginationType {
   current: number;
   pageSize: number;
   totalPages: number;
-};
+}
 
-export type ColumnsType = {
+export interface ColumnsType {
   title: string;
   dataIndex: string;
   key: string;
-};
+}
 
-export type FormType = {
+export interface FormType {
   text: string;
   mail: string;
-};
+}
 
-export type FormPdfType = {
+export interface FormPdfType {
   text: string;
   picture: string;
-};
+}
