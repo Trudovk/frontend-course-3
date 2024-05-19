@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ROUTES } from "../../../pages/routes";
-import { Button, Flex } from "antd";
+import { Button } from "antd";
 import { useAuthContext } from "../../authContext";
 import styled from "styled-components";
 
@@ -51,6 +51,7 @@ export default function Nav() {
       <StyledLink to={ROUTES.FEEDBACK}>Обратная связь</StyledLink>
       <StyledLink to={ROUTES.ABOUTUS}>О нас</StyledLink>
       {isAuth && <StyledLink to={ROUTES.ACCOUNT}>Аккаунт</StyledLink>}
+      <StyledLink to={ROUTES.PDF}>PDF</StyledLink>
       <ButtonStyle
         icon={
           currentTheme === "light" ? (

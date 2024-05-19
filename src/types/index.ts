@@ -22,3 +22,8 @@ export type FormType = {
   text: string;
   mail: string;
 };
+
+export type FormPdfType = {
+  text: string;
+  picture: string;
+};

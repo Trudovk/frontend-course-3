@@ -6,6 +6,7 @@ import Contacts from "../contacts";
 import Feedback from "../feedback";
 import Account from "../account";
 import { useAuthContext } from "../../components/authContext";
+import Pdf from "../pdf";
 
 export const ROUTES = {
   HOME: "/",
@@ -13,6 +14,7 @@ export const ROUTES = {
   CONTACTS: "/contacts",
   FEEDBACK: "/feedback",
   ACCOUNT: "/account",
+  PDF: "/pdf",
 };
 
 const MainRouter = () => {
@@ -22,6 +24,7 @@ const MainRouter = () => {
     { path: ROUTES.ABOUTUS, element: <AboutUs /> },
     { path: ROUTES.CONTACTS, element: <Contacts /> },
     { path: ROUTES.FEEDBACK, element: <Feedback /> },
+    { path: ROUTES.PDF, element: <Pdf /> },
     { path: "*", element: <Navigate to={"/"} replace /> },
   ];
 
