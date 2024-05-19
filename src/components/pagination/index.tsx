@@ -1,9 +1,9 @@
 import styled from "styled-components";
-type Props = {
+interface Props {
   currentPage: number;
   totalPages: number;
   onSwitch: (page: number) => void;
-};
+}
 
 export default function Pagination(props: Props) {
   return (

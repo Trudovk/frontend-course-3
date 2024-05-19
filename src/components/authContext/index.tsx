@@ -1,15 +1,13 @@
 import React, { createContext, useState, useContext, PropsWithChildren } from "react";
 
-type AuthContextType = {
+interface AuthContextType {
   isAuth: boolean;
   setIsAuth: (s: boolean) => void;
-};
+}
 
 const AuthContext = createContext<AuthContextType>({
   isAuth: false,
-  setIsAuth: (s) => {
-    !s;
-  },
+  setIsAuth: (s) => !s,
 });
 
 export const useAuthContext = () => useContext(AuthContext);

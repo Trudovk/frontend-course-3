@@ -1,7 +1,6 @@
-import { useState } from "react";
+import { useState, FC } from "react";
 import { useForm } from "react-hook-form";
 import { Page, Text, View, Document, StyleSheet, PDFDownloadLink, Image, Font } from "@react-pdf/renderer";
-import { FC } from "react";
 
 Font.register({
   family: "Roboto",
