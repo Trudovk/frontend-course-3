@@ -19,7 +19,7 @@ Font.register({
 
 const styles = StyleSheet.create({
   page: {
-    flexDirection: "сolumn",
+    flexDirection: "column",
     backgroundColor: "#E4E4E4",
   },
   section: {
@@ -98,7 +98,7 @@ const Pdf = () => {
           document={<MyDocument name={task.name} picture={task.picture} />}
           fileName="somename.pdf"
         >
-          {({ blob, url, loading, error }) =>
+          {({ loading, error }) =>
             loading ? "Loading document..." : error?.message ?? "Download now!"
           }
         </PDFDownloadLink>
