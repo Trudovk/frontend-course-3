@@ -29,7 +29,7 @@ export default function Home() {
   });
   useEffect(() => {
     fetch(
-      `https://pocketbase-front-323.fjx.su/api/collections/servers/records?perPage=${pagination.pageSize}&page=${pagination.current}`
+      `https://pocketbase-front-323.fjx.su/api/collections/servers/records?perPage=${pagination.pageSize}&page=${pagination.current}`,
     )
       .then((response) => response.json())
       .then((data) => {

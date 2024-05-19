@@ -1,18 +1,33 @@
 module.exports = {
-  root: true,
-  env: { browser: true, es2020: true },
-  extends: [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:react-hooks/recommended",
+  env: {
+    browser: true,
+    es2021: true,
+  },
+  extends: ["standard-with-typescript", "plugin:prettier/recommended"],
+  overrides: [
+    {
+      env: {
+        node: true,
+      },
+      files: [".eslintrc.{js,cjs}"],
+      parserOptions: {
+        sourceType: "script",
+      },
+    },
   ],
-  ignorePatterns: ["dist", ".eslintrc.cjs", "node_modules"],
-  parser: "@typescript-eslint/parser",
-  plugins: ["react-refresh"],
+  parserOptions: {
+    ecmaVersion: "latest",
+    sourceType: "module",
+  },
+  plugins: ["react"],
   rules: {
-    "react-refresh/only-export-components": [
-      "warn",
-      { allowConstantExport: true },
-    ],
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-misused-promises": "off",
+    "@typescript-eslint/strict-boolean-expressions": "off",
+    "no-unneeded-ternary": "off",
+    "@typescript-eslint/no-unsafe-argument": "off",
+    "@typescript-eslint/no-floating-promises": "off",
+    "@typescript-eslint/consistent-type-imports": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
   },
 };

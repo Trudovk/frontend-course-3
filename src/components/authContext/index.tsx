@@ -1,9 +1,4 @@
-import React, {
-  createContext,
-  useState,
-  useContext,
-  PropsWithChildren,
-} from "react";
+import React, { createContext, useState, useContext, PropsWithChildren } from "react";
 
 type AuthContextType = {
   isAuth: boolean;
@@ -22,9 +17,5 @@ export const useAuthContext = () => useContext(AuthContext);
 export const AuthProvider: React.FC<PropsWithChildren> = ({ children }) => {
   const [isAuth, setIsAuth] = useState(false);
 
-  return (
-    <AuthContext.Provider value={{ isAuth, setIsAuth }}>
-      {children}
-    </AuthContext.Provider>
-  );
+  return <AuthContext.Provider value={{ isAuth, setIsAuth }}>{children}</AuthContext.Provider>;
 };
