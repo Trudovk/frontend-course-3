@@ -7,6 +7,7 @@ import Feedback from "../feedback";
 import Account from "../account";
 import { useAuthContext } from "../../components/authContext";
 import Pdf from "../pdf";
+import DynamicPagination from "../dynamicPagination";
 
 export const ROUTES = {
   HOME: "/",
@@ -15,6 +16,7 @@ export const ROUTES = {
   FEEDBACK: "/feedback",
   ACCOUNT: "/account",
   PDF: "/pdf",
+  DYNPAHINATION: "/dynpagination",
 };
 
 const MainRouter = () => {
@@ -25,6 +27,7 @@ const MainRouter = () => {
     { path: ROUTES.CONTACTS, element: <Contacts /> },
     { path: ROUTES.FEEDBACK, element: <Feedback /> },
     { path: ROUTES.PDF, element: <Pdf /> },
+    { path: ROUTES.DYNPAHINATION, element: <DynamicPagination /> },
     { path: "*", element: <Navigate to={"/"} replace /> },
   ];
 
